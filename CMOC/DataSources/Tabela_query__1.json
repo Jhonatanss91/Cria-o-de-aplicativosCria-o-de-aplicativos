@@ -1,0 +1,27 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_excel",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2021-12-16T17:33:45.6580000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "__PowerAppsId__": "Row id",
+      "Caminho": "Caminho",
+      "CELULAR": "CELULAR",
+      "COORDENADOR": "COORDENADOR",
+      "ENDEREÇO": "ENDEREÇO",
+      "FUNÇÃO": "FUNÇÃO",
+      "NOME_x0020_DO_x0020_FUNCIONARIO": "NOME DO FUNCIONARIO",
+      "Tipo_x0020_de_x0020_Item": "Tipo de Item",
+      "Title": "Title"
+    },
+    "DatasetName": "b!TJTFAh2s-0CtHZPN7ko7CgJBvcQTNVtFq0j4Pafx9FjGoqyeXRVOSIcYCjCuC0Fs.01W3EADFUZKYXN5FK2AZFJQP6PRJHUKPVH",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "Tabela_query__1",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

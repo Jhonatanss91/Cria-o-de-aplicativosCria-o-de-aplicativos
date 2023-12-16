@@ -1,0 +1,23 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_excel",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2021-12-16T17:33:45.6580000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "__PowerAppsId__": "Row id",
+      "Coluna1": "Coluna1",
+      "DATA": "DATA",
+      "MATRICULA": "MATRICULA",
+      "NOME": "NOME"
+    },
+    "DatasetName": "b!TJTFAh2s-0CtHZPN7ko7CgJBvcQTNVtFq0j4Pafx9FjGoqyeXRVOSIcYCjCuC0Fs.01W3EADFV7IZEHVSIQUVD2PBYU4ICPL52E",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "MENU_1",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

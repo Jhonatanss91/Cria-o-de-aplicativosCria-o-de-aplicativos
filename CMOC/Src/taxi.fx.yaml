@@ -1,0 +1,669 @@
+taxi As screen:
+
+    Rectangle1_26 As rectangle:
+        Fill: =RGBA(33, 4, 86, 1)
+        Height: =73
+        Width: =1366
+        ZIndex: =1
+
+    "Gallery12 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        Height: =535
+        Items: |
+            =If(IsBlank(DatePicker2_2.SelectedDate),SortByColumns(Search([@'lista do taxi'], TextInput1_6.Text, "matricula","Title"),"horariodechegada", If(SortDescending1, SortOrder.Descending, SortOrder.Ascending)), Filter(SortByColumns(Search([@'lista do taxi'], TextInput1_6.Text, "matricula","Title"),"horariodechegada", If(SortDescending1, SortOrder.Descending, SortOrder.Ascending)),Text('horario de chegada',"dd/mm/yyyy")=Text(DatePicker2_2.SelectedDate,"dd/mm/yyyy")))
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =145
+        Width: =1366
+        Y: =190
+        ZIndex: =1
+
+        Title18 As label:
+            Height: =24
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =312
+            X: =54
+            Y: =12
+            ZIndex: =1
+
+        Subtitle17 As label:
+            Height: =32
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.motivo
+            VerticalAlign: =VerticalAlign.Top
+            Width: =511
+            X: =366
+            Y: =13
+            ZIndex: =2
+
+        Body7 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.horariodepartida
+            VerticalAlign: =VerticalAlign.Top
+            Width: =172
+            X: =437
+            Y: =62
+            ZIndex: =3
+
+        Separator22 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        Label24_1 As label:
+            Align: =Align.Center
+            Height: =41
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: |-
+                ="de:"
+            Width: =43
+            X: =11
+            Y: =54
+            ZIndex: =8
+
+        Body7_3 As label:
+            Height: =27
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.partida
+            VerticalAlign: =VerticalAlign.Top
+            Width: =383
+            X: =54
+            Y: =61
+            ZIndex: =9
+
+        Body7_4 As label:
+            Height: =27
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.'horario de chegada'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =168
+            X: =1181
+            Y: =64
+            ZIndex: =10
+
+        Label24_2 As label:
+            Align: =Align.Center
+            Height: =34
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: |-
+                ="para:"
+            Width: =64
+            X: =690
+            Y: =57
+            ZIndex: =11
+
+        Body7_5 As label:
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.chegada
+            VerticalAlign: =VerticalAlign.Top
+            Width: =425
+            X: =756
+            Y: =61
+            ZIndex: =12
+
+        Label24_3 As label:
+            Align: =Align.Center
+            Height: =33
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: |-
+                ="Situação:"
+            Width: =139
+            X: =862
+            Y: =12
+            ZIndex: =13
+
+        Title18_2 As label:
+            Height: =42
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.situação
+            VerticalAlign: =VerticalAlign.Top
+            Width: =240
+            X: =1001
+            Y: =12
+            ZIndex: =14
+
+        Icon4 As icon.Add:
+            Height: =49
+            Icon: =Icon.Trash
+            OnSelect: =Remove([@'lista do taxi'], Gallery12.Selected)
+            Width: =71
+            X: =1295
+            Y: =2
+            ZIndex: =17
+
+        Label32 As label:
+            Height: =50
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.PERGUNTAAPROVADOR
+            Width: =1312
+            X: =54
+            Y: =95
+            ZIndex: =18
+
+        Icon10 As icon.Warning:
+            Color: =RGBA(184, 0, 0, 1)
+            Height: =36
+            Icon: =Icon.Warning
+            OnSelect: =Select(Parent)
+            Visible: =If(IsBlank(ThisItem.PERGUNTAAPROVADOR)=true,false,true)
+            Width: =21
+            X: =22
+            Y: =102
+            ZIndex: =19
+
+        Icon11 As icon.Edit:
+            Height: =43
+            Icon: =Icon.Edit
+            OnSelect: =Navigate(taxi_resposta)
+            Width: =36
+            X: =1259
+            Y: =5
+            ZIndex: =20
+
+    Label1_26 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =73
+        Size: =20
+        Text: ="SOLICITAÇÃO DE TAXI"
+        Width: =781
+        X: =292
+        ZIndex: =2
+
+    Arrow1_25 As arrow.backArrow:
+        Fill: =RGBA(255, 255, 255, 1)
+        OnSelect: =Navigate(MENU, ScreenTransition.None)
+        X: =11
+        Y: =11
+        ZIndex: =24
+
+    Image2_24 As image:
+        Height: =43
+        Image: ='CMOC-01'
+        Width: =127
+        X: =1239
+        Y: =725
+        ZIndex: =28
+
+    Icon1_34 As icon.Add:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =73
+        Icon: =Icon.Send
+        OnSelect: =NewForm(Form5);SubmitForm(Form5);Reset(Radio3);Navigate(MENU, ScreenTransition.None)
+        Tooltip: =
+        Width: =61
+        X: =1305
+        Y: =95
+        ZIndex: =57
+
+    Label19_17 As label:
+        Height: =22
+        Size: =11
+        Text: |-
+            ="Enviar para aprovação:"
+        Width: =208
+        X: =746
+        Y: =84
+        ZIndex: =58
+
+    Icon1_32 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Add
+        OnSelect: =NewForm(Form14);Navigate(taxi_edição, ScreenTransition.None)
+        Width: =61
+        X: =1305
+        Y: =11
+        ZIndex: =59
+
+    Icon1_33 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =51
+        Icon: =Icon.Reload
+        OnSelect: =Refresh([@'lista do taxi'])
+        X: =1089
+        Y: =11
+        ZIndex: =60
+
+    Label5_5 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =24
+        Size: =8
+        Text: ="Data"
+        Width: =37
+        X: =1243
+        Y: =48
+        ZIndex: =61
+
+    Icon1_35 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =51
+        Icon: =Icon.Sort
+        OnSelect: |-
+            =UpdateContext({SortDescending1: !SortDescending1})
+        Width: =62
+        X: =1197
+        Y: =10
+        ZIndex: =62
+
+    DatePicker2_2 As datepicker:
+        DefaultDate: =""
+        Format: =DateTimeFormat.LongDate
+        Height: =46
+        InputTextPlaceholder: =If(IsBlank(Self.SelectedDate), Text( Now(), "dd/mm/yyyy" ))
+        Reset: =true
+        Width: =215
+        X: =520
+        Y: =84
+        ZIndex: =63
+
+    Label4_2 As label:
+        Height: =42
+        Text: |-
+            ="Filtrar chegada:"
+        Width: =93
+        X: =428
+        Y: =91
+        ZIndex: =64
+
+    Icon2_2 As icon.Add:
+        Height: =36
+        Icon: =Icon.CancelBadge
+        OnSelect: = Reset( DatePicker2_2)
+        Width: =33
+        X: =666
+        Y: =89
+        ZIndex: =65
+
+    TextInput1_6 As text:
+        Default: =""
+        DelayOutput: =true
+        Height: =46
+        HintText: ="Pesquise pela matricula ou nome do solicitante"
+        Width: =389
+        X: =39
+        Y: =89
+        ZIndex: =66
+
+    Icon3_8 As icon.Add:
+        Height: =50
+        Icon: =Icon.Search
+        Width: =39
+        Y: =87
+        ZIndex: =67
+
+    Radio3 As radio:
+        Default: =Radio3_1.Selected.Choice
+        Height: =117
+        Items: |-
+            =Table({Choice:"Daniel V",Value:"daniel.ribeiro@br.cmoc.com"},{Choice:"Rodrigo",Value:"rodrigo.rodrigues@br.cmoc.com"},{Choice:"Jhonatan",Value:"jhonatan.silva@br.cmoc.com"})
+        RadioSize: =15
+        Size: =10
+        Width: =112
+        X: =1180
+        Y: =73
+        ZIndex: =69
+
+    Form5 As form:
+        AcceptsFocus: =false
+        DataSource: ='histórico de solicitações de aprovação'
+        Height: =320
+        Visible: =false
+        Width: =522
+        X: =844
+        Y: =448
+        ZIndex: =70
+
+        retorno_DataCard1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="retorno"
+            Default: =ThisItem.retorno
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'histórico de solicitações de aprovação'],DataSourceInfo.DisplayName,"retorno")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'histórico de solicitações de aprovação'], DataSourceInfo.MaxLength, "retorno")
+            Required: =false
+            Update: =DataCardValue41.Text
+            Width: =174
+            X: =1
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey45 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue41 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: ="Enviando"
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey45.Y + DataCardKey45.Height + 5
+                ZIndex: =2
+
+            ErrorMessage27 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue41.Y + DataCardValue41.Height
+                ZIndex: =3
+
+            StarVisible27 As label:
+                Align: =Align.Center
+                Height: =DataCardKey45.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey45.Y
+                ZIndex: =4
+
+        coordenador_DataCard1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="coordenador"
+            Default: =ThisItem.coordenador
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'histórico de solicitações de aprovação'],DataSourceInfo.DisplayName,"coordenador")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'histórico de solicitações de aprovação'], DataSourceInfo.MaxLength, "coordenador")
+            Required: =false
+            Update: =DataCardValue77.Text
+            Width: =174
+            X: =2
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey82 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue77 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =TextInput3.Text
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey82.Y + DataCardKey82.Height + 5
+                ZIndex: =2
+
+            ErrorMessage48 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue77.Y + DataCardValue77.Height
+                ZIndex: =3
+
+            StarVisible48 As label:
+                Align: =Align.Center
+                Height: =DataCardKey82.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey82.Y
+                ZIndex: =4
+
+        motivoaprovacao_DataCard1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="motivoaprovacao"
+            Default: =ThisItem.motivoaprovacao
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'histórico de solicitações de aprovação'],DataSourceInfo.DisplayName,"motivoaprovacao")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'histórico de solicitações de aprovação'], DataSourceInfo.MaxLength, "motivoaprovacao")
+            Required: =false
+            Update: =DataCardValue78.Text
+            Width: =174
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey83 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue78 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =TextInput3_1.Text
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey83.Y + DataCardKey83.Height + 5
+                ZIndex: =2
+
+            ErrorMessage49 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue78.Y + DataCardValue78.Height
+                ZIndex: =3
+
+            StarVisible49 As label:
+                Align: =Align.Center
+                Height: =DataCardKey83.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey83.Y
+                ZIndex: =4
+
+        Title_DataCard5 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.Title
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'histórico de solicitações de aprovação'],DataSourceInfo.DisplayName,"Title")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'histórico de solicitações de aprovação'], DataSourceInfo.MaxLength, "Title")
+            Required: =true
+            Update: =DataCardValue63.Text
+            Width: =174
+            X: =0
+            Y: =0
+            ZIndex: =71
+
+            DataCardKey69 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue63 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Radio3.Selected.Value
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey69.Y + DataCardKey69.Height + 5
+                ZIndex: =2
+
+            ErrorMessage35 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue63.Y + DataCardValue63.Height
+                ZIndex: =3
+
+            StarVisible35 As label:
+                Align: =Align.Center
+                Height: =DataCardKey69.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey69.Y
+                ZIndex: =4
+
+    Label31 As label:
+        Height: =23
+        Size: =10
+        Text: |-
+            ="Coordenador solicitante:"
+        Width: =166
+        X: =919
+        Y: =83
+        ZIndex: =71
+
+    Label31_1 As label:
+        Height: =23
+        Size: =10
+        Text: |-
+            ="Motivo:"
+        Width: =166
+        X: =919
+        Y: =131
+        ZIndex: =72
+
+    TextInput3 As text:
+        Default: ="Defina o coordenador direto"
+        Height: =27
+        Size: =10
+        Width: =261
+        X: =919
+        Y: =103
+        ZIndex: =73
+
+    TextInput3_1 As text:
+        Default: ="Defina o motivo principal"
+        Height: =27
+        Size: =10
+        Width: =261
+        X: =919
+        Y: =158
+        ZIndex: =74
+

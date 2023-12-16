@@ -1,0 +1,224 @@
+van17_45 As screen:
+
+    Rectangle1_12 As rectangle:
+        Fill: =RGBA(33, 4, 86, 1)
+        Height: =73
+        Width: =1366
+        ZIndex: =1
+
+    Label5_2 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =24
+        Size: =8
+        Text: ="Data"
+        Width: =37
+        X: =1243
+        Y: =48
+        ZIndex: =2
+
+    "Gallery1_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =558
+        Items: |
+            =If(IsBlank(DatePicker2_1.SelectedDate),SortByColumns(Search([@MENU_1], TextInput1_2.Text, "NOME","MATRICULA"),"DATA", If(SortDescending1, SortOrder.Descending, SortOrder.Ascending)), Filter(SortByColumns(Search([@MENU_1], TextInput1_2.Text, "NOME","MATRICULA"),"DATA", If(SortDescending1, SortOrder.Descending, SortOrder.Ascending)),Text(DATA,"dd/mm/yyyy")=Text(DatePicker2_1.SelectedDate,"dd/mm/yyyy")))
+        Layout: =Layout.Vertical
+        OnSelect: =Navigate(van17_45_exibição, ScreenTransition.None)
+        TemplatePadding: =0
+        TemplateSize: =72
+        Width: =1366
+        Y: =148
+        ZIndex: =3
+
+        NextArrow1_2 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="Exibir detalhes do item"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator1_2 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        Label3_8 As label:
+            Height: =38
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Nome:"
+            Width: =68
+            Y: =17
+            ZIndex: =8
+
+        Label3_9 As label:
+            Height: =37
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Matricula:"
+            Width: =93
+            X: =412
+            Y: =18
+            ZIndex: =9
+
+        Label3_11 As label:
+            Height: =28
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Data:"
+            Width: =167
+            X: =672
+            Y: =22
+            ZIndex: =11
+
+        Label3_12 As label:
+            Height: =60
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Programação de parada(+ de 1 dia):"
+            Width: =167
+            X: =999
+            Y: =6
+            ZIndex: =12
+
+        Label11 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Coluna1
+            X: =1166
+            Y: =18
+            ZIndex: =13
+
+        Label11_1 As label:
+            OnSelect: =Select(Parent)
+            Text: =Text(ThisItem.DATA, "dd/mm/yyyy", "pt-BR")
+            X: =726
+            Y: =15
+            ZIndex: =14
+
+        Label11_2 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.MATRICULA
+            X: =505
+            Y: =18
+            ZIndex: =15
+
+        Label11_3 As label:
+            Height: =37
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.NOME
+            Width: =344
+            X: =68
+            Y: =18
+            ZIndex: =16
+
+    Label1_12 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =73
+        Size: =20
+        Text: |-
+            ="Transporte das 17:45"
+        Width: =781
+        X: =292
+        ZIndex: =4
+
+    Image2_12 As image:
+        Height: =73
+        Image: ='CMOC-01'
+        Width: =175
+        X: =1191
+        Y: =695
+        ZIndex: =5
+
+    Arrow1_11 As arrow.backArrow:
+        Fill: =RGBA(255, 255, 255, 1)
+        OnSelect: =Navigate(MENU, ScreenTransition.None)
+        X: =11
+        Y: =11
+        ZIndex: =6
+
+    TextInput1_2 As text:
+        Default: =""
+        DelayOutput: =true
+        Height: =46
+        HintText: ="Pesquise pela matricula ou nome do solicitante"
+        Width: =719
+        X: =48
+        Y: =90
+        ZIndex: =7
+
+    DatePicker2_1 As datepicker:
+        DefaultDate: =""
+        Format: =DateTimeFormat.LongDate
+        Height: =46
+        InputTextPlaceholder: =If(IsBlank(Self.SelectedDate), Text( Now(), "dd/mm/yyyy" ))
+        Reset: =true
+        Width: =446
+        X: =919
+        Y: =90
+        ZIndex: =9
+
+    Label4_1 As label:
+        Height: =42
+        Text: |-
+            ="Filtrar data:"
+        Width: =106
+        X: =813
+        Y: =94
+        ZIndex: =10
+
+    Icon1_11 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Add
+        OnSelect: =NewForm(Form1_1);Navigate(van17_45_edição, ScreenTransition.None)
+        Width: =61
+        X: =1304
+        Y: =11
+        ZIndex: =11
+
+    Icon1_9 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =51
+        Icon: =Icon.Sort
+        OnSelect: |-
+            =UpdateContext({SortDescending1: !SortDescending1})
+        Width: =62
+        X: =1197
+        Y: =10
+        ZIndex: =12
+
+    Icon1_10 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =51
+        Icon: =Icon.Reload
+        OnSelect: =Refresh([@MENU_1])
+        X: =1088
+        Y: =11
+        ZIndex: =13
+
+    Icon2_1 As icon.Add:
+        Height: =36
+        Icon: =Icon.CancelBadge
+        OnSelect: = Reset( DatePicker2_1)
+        Width: =33
+        X: =1297
+        Y: =95
+        ZIndex: =14
+
+    Icon3_4 As icon.Add:
+        Height: =50
+        Icon: =Icon.Search
+        Width: =39
+        Y: =88
+        ZIndex: =15
+

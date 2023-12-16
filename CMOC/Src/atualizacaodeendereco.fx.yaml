@@ -1,0 +1,173 @@
+atualizacaodeendereco As screen:
+
+    Rectangle1_30 As rectangle:
+        Fill: =RGBA(33, 4, 86, 1)
+        Height: =73
+        Width: =1366
+        ZIndex: =1
+
+    "Gallery6 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        Height: =557
+        Items: =SortByColumns(Search([@Tabela_query__1], TextInput1_4.Text,"Title","NOME_x0020_DO_x0020_FUNCIONARIO"),"NOME_x0020_DO_x0020_FUNCIONARIO", SortOrder.Ascending)
+        Layout: =Layout.Vertical
+        OnSelect: =EditForm(Form10);Navigate(atualizacaodeendereco_1, ScreenTransition.None)
+        TemplatePadding: =0
+        TemplateSize: =134
+        Width: =1365
+        Y: =138
+        ZIndex: =1
+
+        Title5 As label:
+            Height: =38
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =218
+            X: =32
+            Y: =13
+            ZIndex: =1
+
+        Subtitle4 As label:
+            Height: =37
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'NOME DO FUNCIONARIO'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =715
+            X: =192
+            Y: =14
+            ZIndex: =2
+
+        Body3 As label:
+            Height: =79
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.ENDEREÇO
+            Width: =875
+            X: =32
+            Y: =54
+            ZIndex: =3
+
+        NextArrow4 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="Exibir detalhes do item"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator8 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        Subtitle4_1 As label:
+            Height: =43
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.FUNÇÃO
+            VerticalAlign: =VerticalAlign.Top
+            Width: =458
+            X: =907
+            Y: =10
+            ZIndex: =6
+
+        Subtitle4_2 As label:
+            Height: =43
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.CELULAR
+            VerticalAlign: =VerticalAlign.Top
+            Width: =458
+            X: =907
+            Y: =72
+            ZIndex: =7
+
+    Label1_30 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =73
+        Size: =20
+        Text: ="Endereços"
+        Width: =781
+        X: =292
+        ZIndex: =4
+
+    Image2_30 As image:
+        Height: =73
+        Image: ='CMOC-01'
+        Width: =175
+        X: =1191
+        Y: =695
+        ZIndex: =5
+
+    Arrow1_29 As arrow.backArrow:
+        Fill: =RGBA(255, 255, 255, 1)
+        OnSelect: =Navigate(MENU, ScreenTransition.None)
+        X: =11
+        Y: =11
+        ZIndex: =6
+
+    TextInput1_4 As text:
+        Default: =""
+        DelayOutput: =true
+        Height: =46
+        HintText: ="Pesquise pela matricula ou nome"
+        Width: =473
+        X: =48
+        Y: =90
+        ZIndex: =7
+
+    Icon1_44 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Add
+        OnSelect: =NewForm(Form10);Navigate(atualizacaodeendereco_1, ScreenTransition.None)
+        Width: =61
+        X: =1304
+        Y: =11
+        ZIndex: =11
+
+    Icon1_43 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =51
+        Icon: =Icon.Reload
+        OnSelect: =Refresh([Tabela_query__1])
+        X: =1240
+        Y: =11
+        ZIndex: =13
+
+    Icon3_9 As icon.Add:
+        Height: =50
+        Icon: =Icon.Search
+        Width: =39
+        X: =9
+        Y: =88
+        ZIndex: =15
+

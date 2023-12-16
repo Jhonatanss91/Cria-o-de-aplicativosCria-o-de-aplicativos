@@ -1,0 +1,463 @@
+van17_45_edição As screen:
+
+    Rectangle1_14 As rectangle:
+        Fill: =RGBA(33, 4, 86, 1)
+        Height: =73
+        Width: =1366
+        ZIndex: =1
+
+    Label1_14 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =73
+        Size: =20
+        Text: |-
+            ="Transporte das 17:45"
+        Width: =781
+        X: =292
+        ZIndex: =4
+
+    Image2_14 As image:
+        Height: =73
+        Image: ='CMOC-01'
+        Width: =175
+        X: =1191
+        Y: =695
+        ZIndex: =5
+
+    Arrow1_13 As arrow.backArrow:
+        Fill: =RGBA(255, 255, 255, 1)
+        OnSelect: =ResetForm(Form1_1);Back()
+        X: =11
+        Y: =11
+        ZIndex: =6
+
+    Icon1_14 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Save
+        OnSelect: =SubmitForm(Form1_1)
+        Width: =61
+        X: =1304
+        Y: =11
+        ZIndex: =11
+
+    Form1_1 As form:
+        AcceptsFocus: =false
+        DataSource: =[@MENU_1]
+        Height: =589
+        Item: =Gallery1_2.Selected
+        OnSuccess: =NewForm(Form1_1)
+        Width: =530
+        Y: =177
+        ZIndex: =12
+
+        DATA_DataCard2 As typedDataCard.dateTimeEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="DATA"
+            Default: =ThisItem.DATA
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@MENU_1],DataSourceInfo.DisplayName,"DATA")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DateValue2.SelectedDate
+            Width: =528
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey20 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DateValue2 As datepicker:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultDate: =Text( Now(), "dd/mm/yyyy" )
+                DisplayMode: =Parent.DisplayMode
+                EndYear: =Year(Today())+100
+                Format: =DateTimeFormat.LongDate
+                Height: =46
+                IsEditable: =true
+                PaddingBottom: =0
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                StartYear: =1899
+                Tooltip: =Parent.DisplayName
+                Width: =423
+                X: =30
+                Y: =DataCardKey20.Y + DataCardKey20.Height + 5
+                ZIndex: =2
+
+            ErrorMessage6 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =
+                ZIndex: =6
+
+            StarVisible6 As label:
+                Align: =Align.Center
+                Height: =DataCardKey20.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey20.Y
+                ZIndex: =7
+
+        Coluna1_DataCard2 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Coluna1"
+            Default: =ThisItem.Coluna1
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@MENU_1],DataSourceInfo.DisplayName,"Coluna1")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@MENU_1], DataSourceInfo.MaxLength, "Coluna1")
+            Required: =false
+            Update: =DataCardValue21.Text
+            Visible: =false
+            Width: =176
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey23 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: ="TRANSPORTE DE PARADA(+ DE 1 DIA)"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue21 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Dropdown9.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BvALUE'
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey23.Y + DataCardKey23.Height + 5
+                ZIndex: =2
+
+            ErrorMessage9 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue21.Y + DataCardValue21.Height
+                ZIndex: =3
+
+            StarVisible9 As label:
+                Align: =Align.Center
+                Height: =DataCardKey23.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey23.Y
+                ZIndex: =4
+
+        MATRICULA_DataCard4 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="MATRICULA"
+            Default: =ThisItem.MATRICULA
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@MENU_1],DataSourceInfo.DisplayName,"MATRICULA")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@MENU_1], DataSourceInfo.MaxLength, "MATRICULA")
+            Required: =false
+            Update: =DataCardValue19.Text
+            Width: =528
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey21 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue19 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Text(Label22_1.Text)
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey21.Y + DataCardKey21.Height + 5
+                ZIndex: =2
+
+            ErrorMessage7 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue19.Y + DataCardValue19.Height
+                ZIndex: =3
+
+            StarVisible7 As label:
+                Align: =Align.Center
+                Height: =DataCardKey21.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey21.Y
+                ZIndex: =4
+
+        NOME_DataCard2 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="NOME"
+            Default: =ThisItem.NOME
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@MENU_1],DataSourceInfo.DisplayName,"NOME")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@MENU_1], DataSourceInfo.MaxLength, "NOME")
+            Required: =false
+            Update: =DataCardValue20.Text
+            Width: =528
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey22 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =15
+                ZIndex: =1
+
+            DataCardValue20 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =First(Filter(Tabela_query__1,Title = DataCardValue19.Text).'NOME DO FUNCIONARIO').'NOME DO FUNCIONARIO'
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey22.Y + DataCardKey22.Height + 5
+                ZIndex: =2
+
+            ErrorMessage8 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue20.Y + DataCardValue20.Height
+                ZIndex: =3
+
+            StarVisible8 As label:
+                Align: =Align.Center
+                Height: =DataCardKey22.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey22.Y
+                ZIndex: =4
+
+    Icon6_1 As icon.Add:
+        Height: =41
+        Icon: =Icon.Search
+        Width: =44
+        X: =22
+        Y: =82
+        ZIndex: =13
+
+    Dropdown6_1 As dropdown:
+        Height: =37
+        Items: =SortByColumns([@Tabela_query__1],"NOME_x0020_DO_x0020_FUNCIONARIO",SortOrder.Ascending)
+        OnChange: =
+        OnSelect: =
+        Width: =482
+        X: =66
+        Y: =83
+        ZIndex: =14
+
+    Label22_1 As label:
+        Text: =First(Filter(Tabela_query__1,'NOME DO FUNCIONARIO' = Text(Dropdown6_1.Selected.'NOME DO FUNCIONARIO')).Title).Title
+        X: =66
+        Y: =116
+        ZIndex: =15
+
+    Dropdown9 As dropdown:
+        Default: ="NÃO"
+        Items: |-
+            =Table({vALUE:"NÃO"},{vALUE:"SIM"})
+        X: =22
+        Y: =527
+        ZIndex: =16
+
+    Label24 As label:
+        Height: =42
+        Text: ="TRANSPORTE COM MAIS DE 1 DIA?"
+        Width: =328
+        X: =22
+        Y: =483
+        ZIndex: =17
+
+    "Gallery1_4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =671
+        Items: =[@MENU_1]
+        Layout: =Layout.Vertical
+        OnSelect: =
+        Selectable: =false
+        TemplatePadding: =0
+        TemplateSize: =143
+        Width: =241
+        X: =1123
+        Y: =97
+        ZIndex: =18
+
+        Separator1_4 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        Label3_21 As label:
+            Height: =38
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Nome:"
+            Width: =68
+            Y: =17
+            ZIndex: =8
+
+        Label3_22 As label:
+            Height: =37
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Matricula:"
+            Width: =93
+            X: =412
+            Y: =18
+            ZIndex: =9
+
+        Label3_23 As label:
+            Height: =28
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Data:"
+            Width: =167
+            Y: =58
+            ZIndex: =11
+
+        Label3_14 As label:
+            Height: =60
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Programação de parada(+ de 1 dia):"
+            Width: =167
+            X: =999
+            Y: =6
+            ZIndex: =12
+
+        Label11_8 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Coluna1
+            X: =1166
+            Y: =18
+            ZIndex: =13
+
+        Label11_4 As label:
+            OnSelect: =Select(Parent)
+            Text: =Text(ThisItem.DATA, "dd/mm/yyyy", "pt-BR")
+            X: =68
+            Y: =55
+            ZIndex: =14
+
+        Label11_7 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.MATRICULA
+            X: =505
+            Y: =18
+            ZIndex: =15
+
+        Label11_6 As label:
+            Height: =37
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.NOME
+            Width: =344
+            X: =68
+            Y: =18
+            ZIndex: =16
+
+    Label30 As label:
+        Height: =24
+        Text: |-
+            ="ULTIMAS SOLICITAÇÕES:"
+        Width: =241
+        X: =1125
+        Y: =73
+        ZIndex: =19
+
