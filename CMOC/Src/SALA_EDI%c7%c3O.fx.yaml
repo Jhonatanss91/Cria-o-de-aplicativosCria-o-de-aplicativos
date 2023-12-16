@@ -16,14 +16,6 @@ SALA_EDIÇÃO As screen:
         X: =292
         ZIndex: =4
 
-    Image2_19 As image:
-        Height: =73
-        Image: ='CMOC-01'
-        Width: =175
-        X: =1191
-        Y: =695
-        ZIndex: =5
-
     Arrow1_18 As arrow.backArrow:
         Fill: =RGBA(255, 255, 255, 1)
         OnSelect: =ResetForm(Form2);Back()

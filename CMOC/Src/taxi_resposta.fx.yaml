@@ -16,14 +16,6 @@ taxi_resposta As screen:
         X: =292
         ZIndex: =4
 
-    Image2_32 As image:
-        Height: =43
-        Image: ='CMOC-01'
-        Width: =127
-        X: =1239
-        Y: =725
-        ZIndex: =5
-
     Icon1_46 As icon.Add:
         Color: =RGBA(255, 255, 255, 1)
         Height: =50

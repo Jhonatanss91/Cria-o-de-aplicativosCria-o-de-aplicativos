@@ -220,14 +220,6 @@ taxi As screen:
         Y: =11
         ZIndex: =24
 
-    Image2_24 As image:
-        Height: =43
-        Image: ='CMOC-01'
-        Width: =127
-        X: =1239
-        Y: =725
-        ZIndex: =28
-
     Icon1_34 As icon.Add:
         Color: =RGBA(0, 0, 0, 1)
         Height: =73

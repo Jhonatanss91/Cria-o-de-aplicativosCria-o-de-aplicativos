@@ -13,13 +13,6 @@ MENU As screen:
         X: =538
         ZIndex: =5
 
-    Image2 As image:
-        Height: =73
-        Image: ='CMOC-03'
-        Width: =175
-        X: =1184
-        ZIndex: =6
-
     Image3 As image:
         Height: =159
         Image: =Imagem1
@@ -77,12 +70,6 @@ MENU As screen:
         X: =868
         Y: =218
         ZIndex: =18
-
-    Image2_26 As image:
-        Height: =73
-        Image: =Inovação
-        Width: =85
-        ZIndex: =25
 
     Image2_28 As image:
         Height: =27

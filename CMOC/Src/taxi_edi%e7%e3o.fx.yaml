@@ -34,14 +34,6 @@ taxi_edição As screen:
         X: =292
         ZIndex: =4
 
-    Image2_25 As image:
-        Height: =43
-        Image: ='CMOC-01'
-        Width: =127
-        X: =1239
-        Y: =725
-        ZIndex: =5
-
     Form14 As form:
         AcceptsFocus: =false
         DataSource: ='lista do taxi'
